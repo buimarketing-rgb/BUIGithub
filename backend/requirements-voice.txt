@@ -1,0 +1,2 @@
+# Optional server-side speech recognition fallback (WHISPER_ENABLED=true)
+faster-whisper==1.1.1

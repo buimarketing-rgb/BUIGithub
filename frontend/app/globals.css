@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BUI theme - derived from the BUI logo (red #E8413A, blue #1F5FA8, graphite gray) */
+@layer base {
+  :root {
+    --background: 220 20% 98%;
+    --foreground: 222 30% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 30% 12%;
+    --primary: 213 69% 39%;
+    --primary-foreground: 0 0% 100%;
+    --brand-red: 3 79% 57%;
+    --secondary: 220 16% 94%;
+    --secondary-foreground: 222 30% 18%;
+    --muted: 220 16% 95%;
+    --muted-foreground: 220 9% 42%;
+    --accent: 213 60% 95%;
+    --accent-foreground: 213 69% 32%;
+    --destructive: 3 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 60% 34%;
+    --warning: 36 92% 42%;
+    --border: 220 14% 89%;
+    --input: 220 14% 85%;
+    --ring: 213 69% 45%;
+    --sidebar: 0 0% 100%;
+    --radius: 0.65rem;
+    --font-sans: "Inter", ui-sans-serif;
+    color-scheme: light;
+  }
+  .dark {
+    --background: 222 24% 8%;
+    --foreground: 220 20% 94%;
+    --card: 222 22% 11%;
+    --card-foreground: 220 20% 94%;
+    --popover: 222 22% 12%;
+    --popover-foreground: 220 20% 94%;
+    --primary: 213 75% 58%;
+    --primary-foreground: 222 30% 8%;
+    --brand-red: 3 85% 62%;
+    --secondary: 222 18% 17%;
+    --secondary-foreground: 220 20% 92%;
+    --muted: 222 18% 15%;
+    --muted-foreground: 220 10% 64%;
+    --accent: 213 40% 18%;
+    --accent-foreground: 213 80% 80%;
+    --destructive: 3 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 55% 45%;
+    --warning: 38 90% 55%;
+    --border: 222 16% 20%;
+    --input: 222 16% 24%;
+    --ring: 213 75% 58%;
+    --sidebar: 222 24% 10%;
+    color-scheme: dark;
+  }
+  * { @apply border-border; }
+  html, body { height: 100%; }
+  body { @apply bg-background text-foreground antialiased; font-feature-settings: "cv11", "ss01"; }
+  ::selection { background: hsl(var(--primary) / 0.25); }
+}
+
+@layer components {
+  .prose-bui { @apply text-[0.94rem] leading-relaxed; }
+  .prose-bui p { @apply my-2; }
+  .prose-bui h1, .prose-bui h2, .prose-bui h3 { @apply font-semibold mt-4 mb-2; }
+  .prose-bui ul { @apply list-disc pl-5 my-2 space-y-1; }
+  .prose-bui ol { @apply list-decimal pl-5 my-2 space-y-1; }
+  .prose-bui strong { @apply font-semibold; }
+  .prose-bui a { @apply text-primary underline underline-offset-2; }
+  .prose-bui code { @apply rounded bg-muted px-1 py-0.5 text-[0.85em]; }
+  .prose-bui pre { @apply rounded-lg bg-muted p-3 overflow-x-auto; }
+  .prose-bui blockquote { @apply border-l-4 border-primary/40 bg-accent/50 px-3 py-2 rounded-r-md my-3 text-sm; }
+  .prose-bui table { @apply w-full text-sm border-collapse my-3 block overflow-x-auto; }
+  .prose-bui th { @apply bg-muted text-left font-semibold px-3 py-2 border border-border whitespace-nowrap; }
+  .prose-bui td { @apply px-3 py-2 border border-border align-top; }
+  .scrollbar-thin { scrollbar-width: thin; }
+}
+
+/* Chart tokens (dataviz reference palette, slots 1-2) */
+.viz-root { --series-1: #2a78d6; --series-2: #eb6834; }
+.dark .viz-root { --series-1: #3987e5; --series-2: #d95926; }
